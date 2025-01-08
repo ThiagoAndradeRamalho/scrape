@@ -10,7 +10,6 @@ class QuotesSpider(scrapy.Spider):
         self.quotes_list = []
 
     def parse(self, response):
-        quotes_list = []
         for quote in response.css('div.quote'):
             quote_data = {
                'text': quote.css('span.text::text').get(),
